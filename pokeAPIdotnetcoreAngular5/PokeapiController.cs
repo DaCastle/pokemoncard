@@ -15,7 +15,7 @@ namespace pokeAPIdotnetcoreAngular5
     {
 
         [HttpGet("pokemon/{idOrName}")]
-        public async Task<IActionResult> GetPokemon (string idOrName)
+        public async Task<IActionResult> GetPokemon(string idOrName)
         {
             using (var client = new HttpClient())
             {
