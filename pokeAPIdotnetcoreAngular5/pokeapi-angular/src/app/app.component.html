@@ -1,0 +1,57 @@
+<div class="card col-lg-3 offset-lg-4" [ngStyle]="{'background-color': cardColor}">
+  <div class="image-container">
+    <img class="card-img-top sprite" src="{{mainSprite}}" alt="{{pokemon.name}} Image" [ngStyle]="{'background-color': mainSpriteBackgroundColor}">
+    <img class="prev" src="{{prev}}" alt="prev" (click)="getPokemon(pokemon.id - 1)">
+    <img class="next" src="{{next}}" alt="next" (click)="getPokemon(pokemon.id + 1)">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{pokemon.name | uppercase}}</h5>
+    <h6>{{pokemon.id}}</h6>
+
+
+    <div class="form-group">
+
+      <div class="row">
+
+        <select class="form-control col-lg-12 dropdown-stats">
+          <option>Abilities</option>
+          <option *ngFor="let ability of abilities"
+                  [value]="ability.ability.name">
+            {{ability.ability.name}}
+          </option>
+        </select>
+
+      </div>
+
+
+      <div class="row">
+
+        <select class="form-control col-lg-12 dropdown-stats">
+          <option>Stats</option>
+          <option *ngFor="let stat of stats"
+                  [value]="stat.stat.name">
+            {{stat.stat.name}} : {{stat.base_stat}}
+          </option>
+        </select>
+
+      </div>
+
+
+      <div class="row">
+
+        <select class="form-control col-lg-12 dropdown-stats">
+          <option>Types</option>
+          <option *ngFor="let type of types"
+                  [value]="type.type.name">
+            {{type.type.name}}
+          </option>
+        </select>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+</div>

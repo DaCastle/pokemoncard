@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'OldSchoolAdventures';
+  src: url('/assets/fontFamily/OldSchoolAdventures.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  url('/assets/fontFamily/OldSchoolAdventures.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+.card {
+  border: 20px solid #FFDE00;
+  font-family: 'OldSchoolAdventures';
+  font-size: 12px;
+}
+.card-body {
+  text-align: center;
+}
+.image-container {
+  position: relative;
+  text-align: center;
+}
+.sprite {
+  height: 250px;
+  margin-top: 10px;
+  background-color: rgba(41, 44, 238, 0.20);
+}
+
+.dropdown-stats {
+  background-color:mediumturquoise;
+}
+
+.prev, .next {
+  position: absolute;
+  padding: 0;
+  top: 75%;
+  height: 50px;
+  width: 50px;
+  opacity: 0.7;
+}
+.prev {
+  right: auto;
+  left: 2%;
+}
+.next {
+  left: auto;
+  right: 2%;
+}
+  .prev:hover, .next:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
