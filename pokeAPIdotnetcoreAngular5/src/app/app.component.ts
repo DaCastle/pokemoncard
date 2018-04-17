@@ -107,8 +107,8 @@ export class AppComponent implements OnInit {
     this.abilities = this.pokemon.abilities;
     this.stats = this.pokemon.stats;
     this.types = this.pokemon.types;
-    this.cardColor = this.getCardColor(this.types[this.types.length-1]["type"]["name"]);
-    console.log(this.cardColor);
+    this.cardColor = this.getCardColor(this.types[this.types.length - 1]["type"]["name"]);
+    this.mainSpriteBackgroundColor = this.cardColor.replace(",.51)", ",1)");
   }
 
   hexToRgbA(hex): string {
@@ -119,8 +119,7 @@ export class AppComponent implements OnInit {
       c = [c[0], c[0], c[1], c[1], c[2], c[2]];
     }
     c = '0x' + c.join('');
-    this.mainSpriteBackgroundColor = 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',.5)';
-    return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',1)';
+    return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',') + ',.5)';
   }
   throw new Error('Bad Hex');
 }
