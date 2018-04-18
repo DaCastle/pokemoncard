@@ -41,7 +41,21 @@
   left: auto;
   right: 2%;
 }
-  .prev:hover, .next:hover {
+.prev:hover, .next:hover {
     cursor: pointer;
     opacity: 1;
   }
+.me-pic {
+  height: 50%;
+  width: 50%;
+}
+.my-card {
+  background-color: black;
+  color: white;
+}
+
+.tech-list {
+  background-color: black;
+  color: black;
+  margin-bottom:10px;
+}

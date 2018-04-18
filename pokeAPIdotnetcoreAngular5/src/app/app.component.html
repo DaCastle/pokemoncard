@@ -1,67 +1,93 @@
-<div class="card col-lg-3 offset-lg-4" [ngStyle]="{'background-color': cardColor}">
+<div class="row">
 
-  <div class="row">
-    <div class="input-group">
-      <input [(ngModel)]="searchValue" type="text" class="form-control" placeholder="Pokemon name or id" aria-label="pokemon name or id">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" (click)="getPokemon(searchValue)">find</button>
-      </div>
+  <div class="card col-lg-3 my-card">
+    <div class="card-body">
+
+      <img class="card-img-top me-pic" src="../assets/images/me.jpg" />
+      <h5 class="card-title">guess who</h5>
+
+      <p class="card-text">used retro look and bad poor design to prevent being wanted for my markup skills (or lack thereof)</p>
+
+      <h5>Tech Used</h5>
+      <ul class="list-group tech-list">
+        <li class="list-group-item">Angular5</li>
+        <li class="list-group-item">Boostrap4</li>
+        <li class="list-group-item">.net core 2</li>
+        <li class="list-group-item">Git (Github)</li>
+        <li class="list-group-item">Continuous Integration through VSTS</li>
+        <li class="list-group-item">Continuous Deployment from VSTS to Azure</li>
+      </ul>
+
+      <a target="_blank" href="http://dakotacastleberg.netlify.com/" class="btn btn-primary">Portfolio</a>
     </div>
   </div>
 
-  <div class="image-container">
-    <img class="card-img-top sprite" src="{{mainSprite}}" alt="{{pokemon.name}} Image" [ngStyle]="{'background-color': mainSpriteBackgroundColor}">
-    <img class="prev" src="{{prev}}" alt="prev" (click)="getPokemon(pokemon.id - 1)">
-    <img class="next" src="{{next}}" alt="next" (click)="getPokemon(pokemon.id + 1)">
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{pokemon.name | uppercase}}</h5>
-    <h6>{{pokemon.id}}</h6>
+  <div class="card col-lg-3  offset-lg-1" [ngStyle]="{'background-color': cardColor}">
 
-
-    <div class="form-group">
-
-      <div class="row">
-
-        <select class="form-control col-lg-12 dropdown-stats">
-          <option>Abilities</option>
-          <option *ngFor="let ability of abilities"
-                  [value]="ability.ability.name">
-            {{ability.ability.name}}
-          </option>
-        </select>
-
+    <div class="row">
+      <div class="input-group">
+        <input [(ngModel)]="searchValue" type="text" class="form-control" placeholder="Pokemon name or id" aria-label="pokemon name or id">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="getPokemon(searchValue)">find</button>
+        </div>
       </div>
+    </div>
+
+    <div class="image-container">
+      <img class="card-img-top sprite" src="{{mainSprite}}" alt="{{pokemon.name}} Image" [ngStyle]="{'background-color': mainSpriteBackgroundColor}">
+      <img class="prev" src="{{prev}}" alt="prev" (click)="getPokemon(pokemon.id - 1)">
+      <img class="next" src="{{next}}" alt="next" (click)="getPokemon(pokemon.id + 1)">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{pokemon.name | uppercase}}</h5>
+      <h6>{{pokemon.id}}</h6>
 
 
-      <div class="row">
+      <div class="form-group">
 
-        <select class="form-control col-lg-12 dropdown-stats">
-          <option>Stats</option>
-          <option *ngFor="let stat of stats"
-                  [value]="stat.stat.name">
-            {{stat.stat.name}} : {{stat.base_stat}}
-          </option>
-        </select>
+        <div class="row">
 
-      </div>
+          <select class="form-control col-lg-12 dropdown-stats">
+            <option>Abilities</option>
+            <option *ngFor="let ability of abilities"
+                    [value]="ability.ability.name">
+              {{ability.ability.name}}
+            </option>
+          </select>
+
+        </div>
 
 
-      <div class="row">
+        <div class="row">
 
-        <select class="form-control col-lg-12 dropdown-stats">
-          <option>Types</option>
-          <option *ngFor="let type of types"
-                  [value]="type.type.name">
-            {{type.type.name}}
-          </option>
-        </select>
+          <select class="form-control col-lg-12 dropdown-stats">
+            <option>Stats</option>
+            <option *ngFor="let stat of stats"
+                    [value]="stat.stat.name">
+              {{stat.stat.name}} : {{stat.base_stat}}
+            </option>
+          </select>
+
+        </div>
+
+
+        <div class="row">
+
+          <select class="form-control col-lg-12 dropdown-stats">
+            <option>Types</option>
+            <option *ngFor="let type of types"
+                    [value]="type.type.name">
+              {{type.type.name}}
+            </option>
+          </select>
+
+        </div>
+
 
       </div>
 
 
     </div>
-
-
   </div>
+
 </div>
