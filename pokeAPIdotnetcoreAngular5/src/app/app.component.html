@@ -1,4 +1,14 @@
 <div class="card col-lg-3 offset-lg-4" [ngStyle]="{'background-color': cardColor}">
+
+  <div class="row">
+    <div class="input-group">
+      <input [(ngModel)]="searchValue" type="text" class="form-control" placeholder="Pokemon name or id" aria-label="pokemon name or id">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="getPokemon(searchValue)">find</button>
+      </div>
+    </div>
+  </div>
+
   <div class="image-container">
     <img class="card-img-top sprite" src="{{mainSprite}}" alt="{{pokemon.name}} Image" [ngStyle]="{'background-color': mainSpriteBackgroundColor}">
     <img class="prev" src="{{prev}}" alt="prev" (click)="getPokemon(pokemon.id - 1)">

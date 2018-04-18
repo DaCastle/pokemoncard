@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   mainSpriteBackgroundColor: string = "#ffffff";
   prev: string = "/assets/images/cat.gif";
   next: string = "/assets/images/cat.gif";
+  searchValue: string = "";
 
   typeColors: {} = {
     "normal": "A8A77A",
@@ -63,8 +64,8 @@ export class AppComponent implements OnInit {
 
     this._httpService.get('/api/pokeapi/pokemon/' + idOrName).subscribe(values => {
       this.dataSetter(values);
-      this.getPrevSprite(idOrName);
-      this.getNextSprite(idOrName);
+      this.getPrevSprite(this.pokemon.id);
+      this.getNextSprite(this.pokemon.id);
     });
   }
 
