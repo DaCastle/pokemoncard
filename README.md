@@ -17,12 +17,6 @@ run 'npm install'
 # run the application
 run 'dotnet run'
 
-in the console, there will be a line stating 'Now listening on http....'
-
-copy the http link
-
-open 'proxy.config.json' and paste the http link as the 'target' reference 
-
 open a second command prompt(as admministrator), navigate into the solution folder
 
 run 'ng serve --proxy-config proxy.config.json'
