@@ -26,7 +26,7 @@ run 'ng serve --proxy-config proxy.config.json'
 the output of the command will list the port the Angular app is running on, such as 'open your browser on http://localhost:4200/'
 
 # View the live app
-the Angular app is accessible in a browser via the link from the output stated directly above.
+the Angular app is accessible in a browser via the link from the output stated directly above (should be http://localhost:4200)
 
 # Notes
 active app reload should occur on any frontend file *save* that takes place
