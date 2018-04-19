@@ -10,7 +10,7 @@ Node.js installed (https://nodejs.org/en/)(for npm addition)
 Clone or zip/extract the the repo to your preferred location
 
 # npm
-through the command prompt(as admministrator), navigate into the solution folder
+through the command prompt(as admministrator), navigate into the 'pokeAPIdotnetcoreAngular5' folder
 
 run 'npm install'
 
