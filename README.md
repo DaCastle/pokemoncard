@@ -31,7 +31,11 @@ the Angular app is accessible in a browser via the link from the output stated d
 # Notes
 active app reload should occur on any frontend file *save* that takes place
 
-# adding Continuous Integration and Continuous Delivery
-I found a great resource that allowed me to set up automatic builds in VSTS on each new commit, and deploy to my azure resource group automatically
+Great resource for setting this up: https://medium.com/@levifuller/building-an-angular-application-with-asp-net-core-in-visual-studio-2017-visualized-f4b163830eaa
 
-https://medium.com/@levifuller/building-an-angular-application-with-asp-net-core-in-visual-studio-2017-visualized-f4b163830eaa
+
+# adding Continuous Integration and Continuous Delivery
+
+The followup from the above article helped me get CI and CD in place: 
+
+https://medium.com/@levifuller/how-to-deploy-an-angular-cli-application-built-on-asp-net-1fa03c0ca365
