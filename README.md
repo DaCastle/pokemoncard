@@ -17,7 +17,7 @@ run 'npm install'
 # run the application
 run 'dotnet run'
 
-open a second command prompt(as admministrator), navigate into the solution folder
+open a second command prompt(as admministrator), navigate into 'pokeAPIdotnetcoreAngular5' folder
 
 run 'ng serve --proxy-config proxy.config.json'
 
