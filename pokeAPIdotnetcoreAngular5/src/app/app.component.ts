@@ -62,7 +62,7 @@ export class AppComponent implements OnInit {
       idOrName = 802;
     }
 
-    this._httpService.get('/api/pokeapi/pokemon/' + idOrName).subscribe(values => {
+    this._httpService.get('/api/pokeapi/pokemon/' + idOrName.toLowerCase()).subscribe(values => {
       this.dataSetter(values);
       this.getPrevSprite(this.pokemon.id);
       this.getNextSprite(this.pokemon.id);
