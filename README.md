@@ -10,20 +10,14 @@ Node.js installed (https://nodejs.org/en/)(for npm addition)
 Clone or zip/extract the the repo to your preferred location
 
 # npm
-through the command prompt(as admministrator), navigate into the solution folder
+through the command prompt(as admministrator), navigate into the 'pokeAPIdotnetcoreAngular5' folder
 
 run 'npm install'
 
 # run the application
 run 'dotnet run'
 
-in the console, there will be a line stating 'Now listening on http....'
-
-copy the http link
-
-open 'proxy.config.json' and paste the http link as the 'target' reference 
-
-open a second command prompt(as admministrator), navigate into the solution folder
+open a second command prompt(as administrator), navigate into 'pokeAPIdotnetcoreAngular5' folder
 
 run 'ng serve --proxy-config proxy.config.json'
 
@@ -32,12 +26,16 @@ run 'ng serve --proxy-config proxy.config.json'
 the output of the command will list the port the Angular app is running on, such as 'open your browser on http://localhost:4200/'
 
 # View the live app
-the Angular app is accessible in a browser via the link from the output stated directly above.
+the Angular app is accessible in a browser via the link from the output stated directly above (should be http://localhost:4200)
 
 # Notes
 active app reload should occur on any frontend file *save* that takes place
 
-# adding Continuous Integration and Continuous Delivery
-I found a great resource that allowed me to set up automatic builds in VSTS on each new commit, and deploy to my azure resource group automatically
+Great resource for setting this up: https://medium.com/@levifuller/building-an-angular-application-with-asp-net-core-in-visual-studio-2017-visualized-f4b163830eaa
 
-https://medium.com/@levifuller/building-an-angular-application-with-asp-net-core-in-visual-studio-2017-visualized-f4b163830eaa
+
+# adding Continuous Integration and Continuous Delivery
+
+The followup from the above article helped me get CI and CD in place: 
+
+https://medium.com/@levifuller/how-to-deploy-an-angular-cli-application-built-on-asp-net-1fa03c0ca365
