@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-
+import { PokeapiService } from './pokeapi.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,17 +7,18 @@ import { Http } from '@angular/http';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private _httpService: Http) { }
+  constructor(private pokeapi: PokeapiService) { }
 
   pokemon: any = {};
   abilities: string[] = [];
   stats: string[] = [];
   types: string[] = [];
   cardColor: string = "#ffffff";
-  mainSprite: string = "/assets/images/cat.gif";
   mainSpriteBackgroundColor: string = "#ffffff";
-  prev: string = "/assets/images/cat.gif";
-  next: string = "/assets/images/cat.gif";
+  catGif: string = "/assets/images/cat.gif";
+  mainSprite: string = this.catGif;
+  prev: string = this.catGif;
+  next: string = this.catGif;
   searchValue: string = "";
 
   typeColors: {} = {
@@ -45,8 +45,9 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this._httpService.get('/api/pokeapi/pokemon/1').subscribe(values => {
-      this.dataSetter(values);
+    this.pokeapi.getPokemon('1')
+    .subscribe(data => {
+      this.dataSetter(data);
       this.getPrevSprite(this.pokemon.id);
       this.getNextSprite(this.pokemon.id);
     });
@@ -54,24 +55,26 @@ export class AppComponent implements OnInit {
 
 
   getPokemon(idOrName): void {
-    this.mainSprite = "/assets/images/cat.gif";
-    this.prev = "/assets/images/cat.gif";
-    this.next = "/assets/images/cat.gif";
+    this.mainSprite = this.catGif;
+    this.prev = this.catGif;
+    this.next = this.catGif;
 
     if (idOrName === 0) {
       idOrName = 802;
     }
 
-    this._httpService.get('/api/pokeapi/pokemon/' + idOrName.toString().toLowerCase()).subscribe(values => {
-      this.dataSetter(values);
+    this.pokeapi.getPokemon(idOrName.toString().toLowerCase())
+    .subscribe(data => {
+      this.dataSetter(data);
       this.getPrevSprite(this.pokemon.id);
       this.getNextSprite(this.pokemon.id);
     });
   }
 
   getSpriteUrl(property, id): void {
-    this._httpService.get('/api/pokeapi/sprite/' + id).subscribe(spriteUrl => {
-      this[property] = spriteUrl["_body"] as string;
+    this.pokeapi.getSprite(id)
+    .subscribe(spriteUrl => {
+      this[property] = spriteUrl as string;
     });
   }
 
@@ -102,8 +105,8 @@ export class AppComponent implements OnInit {
     return color;
   }
 
-  dataSetter(values): void {
-    this.pokemon = JSON.parse(values["_body"]);
+  dataSetter(data): void {
+    this.pokemon = data;
     this.getSpriteUrl("mainSprite", this.pokemon.id);
     this.abilities = this.pokemon.abilities;
     this.stats = this.pokemon.stats;

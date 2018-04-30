@@ -38,7 +38,8 @@ namespace pokeAPIdotnetcoreAngular5
         [HttpGet("sprite/{id}")]
         public string GetSprite(string id)
         {
-            return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png";
+            var url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + id + ".png";
+            return url;
         }
 
         // GET api/<controller>/5
